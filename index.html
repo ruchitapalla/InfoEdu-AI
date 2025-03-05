@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfoEduAi - College Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            color: white;
+            text-align: center;
+        }
+        h1 {
+            margin-top: 20px;
+        }
+        .container {
+            width: 60%;
+            margin: auto;
+        }
+        .chatbox {
+            background: white;
+            color: black;
+            padding: 10px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .chatbox input {
+            width: 80%;
+            padding: 5px;
+        }
+        .chatbox button {
+            padding: 5px 10px;
+            background: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to InfoEduAi 🌟</h1>
+    <p>Your Instant College Info Assistant</p>
+
+    <div class="container">
+        <div class="chatbox">
+            <p>🤖 Hi, I am InfoEduAi! How can I help you today?</p>
+            <input type="text" id="userInput" placeholder="Ask about events, placements, etc.">
+            <button onclick="showMessage()">Send</button>
+            <p id="chatResponse"></p>
+        </div>
+    </div>
+
+    <script>
+        function showMessage() {
+            let userInput = document.getElementById("userInput").value.toLowerCase();
+            let response = "";
+
+            if (userInput.includes("event") || userInput.includes("today")) {
+                response = "📅 Today's event: 'The Goal of Human Pursuit' (January)";
+            } else if (userInput.includes("month")) {
+                response = "🎤 This month's event: 'Ideathon' (March)";
+            } else if (userInput.includes("placement")) {
+                response = "🏢 Placement Companies: TCS, Infosys, Wipro, Amazon, IBM...";
+            } else if (userInput.includes("internship")) {
+                response = "🛠 Available internships in VLSI, Embedded Systems, and more.";
+            } else if (userInput.includes("sports")) {
+                response = "⚽ Available sports: Basketball, Cricket, Tennis, Volleyball...";
+            } else {
+                response = "❌ Sorry, I didn't understand. Try asking about 'events,' 'placements,' or 'sports.'";
+            }
+
+            document.getElementById("chatResponse").innerText = response;
+        }
+    </script>
+
+</body>
+</html>
